@@ -1,19 +1,36 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { text } from '../../../testing/dom';
 import { SignalIo } from './signal-io';
 
 describe('SignalIo', () => {
+  let fixture: ComponentFixture<SignalIo>;
+  let host: HTMLElement;
+
+  const stars = () => host.querySelectorAll<HTMLButtonElement>('.star');
+  const parentRating = () => text(host.querySelector('.metric__value'));
+
+  beforeEach(async () => {
+    fixture = TestBed.createComponent(SignalIo);
+    await fixture.whenStable();
+    host = fixture.nativeElement as HTMLElement;
+  });
+
+  it('renders five stars from the default max input', () => {
+    expect(stars()).toHaveLength(5);
+    expect(parentRating()).toBe('0');
+  });
+
   it('writes a two-way bound value back into the parent signal', async () => {
-    const fixture = TestBed.createComponent(SignalIo);
+    stars()[2].click();
     await fixture.whenStable();
 
-    const host = fixture.nativeElement as HTMLElement;
-    const stars = host.querySelectorAll<HTMLButtonElement>('.star');
-    expect(stars.length).toBe(5);
+    expect(parentRating()).toBe('3');
+  });
 
-    stars[2].click();
+  it('reports every change through the output', async () => {
+    stars()[0].click();
     await fixture.whenStable();
 
-    const shown = host.querySelector('.metric__value')?.textContent?.trim();
-    expect(shown).toBe('3');
+    expect(text(host.querySelector('.log'))).toContain('changed → 1');
   });
 });

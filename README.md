@@ -59,6 +59,19 @@ src/app/
 
 Adding a recipe is a folder plus a route — see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
+## Testing
+
+The suite is mostly black-box: it drives each component through the DOM and asserts what a user
+would actually see, with a few unit tests for the services. That includes the awkward bits — the
+debounced search, the `resource` loading/error states and a `@defer` block.
+
+```bash
+npm test              # run the suite
+npm run test:coverage # run with a text coverage report
+```
+
+Coverage sits around **96% statements / 98% branches**.
+
 ## Deployment
 
 Pushes to `main` build and publish to GitHub Pages through the workflow in
