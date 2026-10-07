@@ -29,6 +29,9 @@ jobs:
       # Serve client-side routes on refresh — GitHub Pages has no rewrite rules
       - run: cp dist/ng-lab/browser/index.html dist/ng-lab/browser/404.html
       - uses: actions/configure-pages@v5
+        with:
+          # Turn Pages on during the first run so no manual step is needed.
+          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/ng-lab/browser
