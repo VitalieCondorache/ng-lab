@@ -111,7 +111,8 @@ export class AsyncResource {
     },
   });
 
-  protected readonly list = computed(() => this.releases.value() ?? []);
+  // value() throws once the resource is in an error state, so guard with hasValue().
+  protected readonly list = computed(() => (this.releases.hasValue() ? this.releases.value() : []));
 
   protected readonly phase = computed(() => {
     if (this.releases.isLoading()) return 'loading';
