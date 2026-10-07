@@ -1,59 +1,69 @@
-# NgLab
+# Angular Lab
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.2.
+An interactive reference for modern Angular. Every page is a small, runnable example of the
+signals, patterns and performance techniques I reach for most often — with the code sitting right
+next to the demo, ready to copy.
 
-## Development server
+> Live demo: https://example.github.io/ng-lab/ _(update once Pages is enabled)_
 
-To start a local development server, run:
+## What is in here
 
-```bash
-ng serve
-```
+- **Signals & Reactivity** — `signal`/`computed`/`effect`, `linkedSignal`, `resource`, RxJS interop
+  via `toSignal`, and signal-based component I/O (`input`/`model`/`output`).
+- **Modern Patterns** — the built-in control flow, deferrable views and typed reactive forms.
+- **Performance Lab** — OnPush vs Default change detection, and why `track` matters in `@for`.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Why another Angular demo site?
 
-## Code scaffolding
+Most of them stop at a slider and a number. I wanted something I could keep open in a second tab
+while working: a reference that shows _why_ an API behaves the way it does, not just that it
+exists. So each recipe pairs a live demo with the smallest snippet that reproduces it.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Running it locally
 
 ```bash
-ng build
+npm install
+npm start
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Then open http://localhost:4200.
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Useful scripts
 
 ```bash
-ng test
+npm start          # dev server
+npm run build      # production build
+npm test           # unit tests (Vitest)
+npm run lint       # ESLint
+npm run format     # Prettier
 ```
 
-## Running end-to-end tests
+A pre-commit hook formats and lints staged files, so `npm run format` is mostly a convenience.
 
-For end-to-end (e2e) testing, run:
+## Built with
 
-```bash
-ng e2e
+- Angular with standalone components — no NgModules.
+- **Zoneless** change detection; the app ships without `zone.js`.
+- Signals for state, with RxJS only where a stream is genuinely the right fit.
+- SCSS driven by design tokens — no component library, so the styling stays predictable.
+- `highlight.js` pulled in on demand for the code blocks (kept out of the initial bundle).
+
+## Project layout
+
+```
+src/app/
+  core/        theme, syntax highlighting, recipe registry
+  shared/      layout (header, sidebar) and small UI pieces
+  recipes/     one folder per recipe, lazy-loaded per route
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Adding a recipe is a folder plus a route — see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
-## Additional Resources
+## Deployment
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Pushes to `main` build and publish to GitHub Pages through the workflow in
+`.github/workflows/deploy.yml`.
+
+## License
+
+MIT — see [LICENSE](./LICENSE).
