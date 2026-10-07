@@ -1,0 +1,82 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 3.6rem;
+  padding: 0 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.topbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+}
+
+.topbar__brand:hover {
+  text-decoration: none;
+}
+
+.topbar__mark {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.topbar__titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.topbar__sub {
+  font-size: 0.72rem;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topbar__link {
+  font-size: 0.85rem;
+  font-weight: 550;
+  color: var(--text-muted);
+}
+
+.topbar__link:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.topbar__theme {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface-raised);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.topbar__theme:hover {
+  border-color: var(--accent);
+}

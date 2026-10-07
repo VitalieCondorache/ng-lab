@@ -1,0 +1,64 @@
+/* Minimal highlight.js palette. This lives globally because the highlighted markup is
+   injected via innerHTML and therefore is not covered by component style encapsulation. */
+.hljs {
+  color: var(--code-text);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6b7a99;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-doctag,
+.hljs-type {
+  color: #c792ea;
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute {
+  color: #c3e88d;
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.function_,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #82aaff;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link {
+  color: #f78c6c;
+}
+
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-attr {
+  color: #ffcb6b;
+}
+
+.hljs-meta,
+.hljs-params {
+  color: #89ddff;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: 700;
+}

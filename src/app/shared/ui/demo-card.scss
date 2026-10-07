@@ -1,0 +1,27 @@
+.demo {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow);
+}
+
+.demo__head {
+  margin-bottom: 1rem;
+}
+
+.demo__title {
+  font-size: 1.15rem;
+}
+
+.demo__about {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.demo__stage {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}

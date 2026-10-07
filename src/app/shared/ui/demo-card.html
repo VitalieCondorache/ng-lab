@@ -1,0 +1,14 @@
+<article class="demo">
+  <header class="demo__head">
+    <h2 class="demo__title">{{ title() }}</h2>
+    @if (about()) {
+      <p class="demo__about muted">{{ about() }}</p>
+    }
+  </header>
+
+  <div class="demo__stage">
+    <ng-content select="[stage]" />
+  </div>
+
+  <ng-content />
+</article>

@@ -1,0 +1,53 @@
+/* Design tokens. The active theme is picked from the `data-theme` attribute on
+   <html>, which is set before the first paint (see index.html) so there is no flash. */
+
+:root {
+  color-scheme: light;
+
+  --surface: #ffffff;
+  --surface-raised: #f5f7fa;
+  --surface-sunken: #eceef2;
+  --border: #d9dce3;
+  --text: #1b1f27;
+  --text-muted: #5b6472;
+  --accent: #d81b4a;
+  --accent-soft: rgba(216, 27, 74, 0.1);
+  --on-accent: #ffffff;
+  --ok: #1f9d63;
+  --warn: #b7791f;
+
+  --code-bg: #0f1420;
+  --code-text: #d6deeb;
+
+  --shadow: 0 1px 2px rgba(16, 20, 30, 0.06), 0 10px 28px rgba(16, 20, 30, 0.08);
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --sidebar-w: 264px;
+
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --surface: #0f1218;
+  --surface-raised: #171b24;
+  --surface-sunken: #0a0d12;
+  --border: #29303c;
+  --text: #eef1f6;
+  --text-muted: #9aa4b5;
+  --accent: #ff4f6d;
+  --accent-soft: rgba(255, 79, 109, 0.16);
+  --on-accent: #0f1218;
+  --ok: #3ecf8e;
+  --warn: #e2b93b;
+
+  --code-bg: #0a0d13;
+  --code-text: #d6deeb;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 14px 36px rgba(0, 0, 0, 0.5);
+}

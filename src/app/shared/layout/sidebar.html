@@ -1,0 +1,35 @@
+<nav class="side" aria-label="Recipes">
+  <div class="side__search">
+    <label class="side__search-label" for="recipe-filter">Filter</label>
+    <input
+      id="recipe-filter"
+      type="search"
+      class="input"
+      placeholder="defer, signal, track…"
+      [value]="query()"
+      (input)="onFilter($event)"
+    />
+  </div>
+
+  @for (section of sections(); track section.group) {
+    <div class="side__group">
+      <h2 class="side__group-title">{{ section.group }}</h2>
+      <ul class="side__list">
+        @for (recipe of section.items; track recipe.path) {
+          <li>
+            <a
+              class="side__link"
+              [routerLink]="'/recipes/' + recipe.path"
+              routerLinkActive="side__link--active"
+            >
+              <span class="side__link-title">{{ recipe.title }}</span>
+              <span class="side__link-summary">{{ recipe.summary }}</span>
+            </a>
+          </li>
+        }
+      </ul>
+    </div>
+  } @empty {
+    <p class="side__empty muted">Nothing matches “{{ query() }}”.</p>
+  }
+</nav>

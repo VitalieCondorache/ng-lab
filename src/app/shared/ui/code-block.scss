@@ -1,0 +1,49 @@
+.code {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--code-bg);
+  color: var(--code-text);
+}
+
+.code__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.35rem 0.5rem 0.35rem 0.85rem;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+  font-size: 0.72rem;
+}
+
+.code__label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.code__copy {
+  padding: 0.25rem 0.6rem;
+  border-color: rgb(255 255 255 / 16%);
+  background: transparent;
+  color: inherit;
+  font-size: 0.72rem;
+}
+
+.code__copy:hover {
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.code pre {
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.code code {
+  font-family: var(--font-mono);
+}
