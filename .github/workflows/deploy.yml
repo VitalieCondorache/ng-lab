@@ -26,6 +26,8 @@ jobs:
       - run: npm ci
       # base-href must match the repository name for project pages
       - run: npm run build -- --base-href /ng-lab/
+      # Serve client-side routes on refresh — GitHub Pages has no rewrite rules
+      - run: cp dist/ng-lab/browser/index.html dist/ng-lab/browser/404.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

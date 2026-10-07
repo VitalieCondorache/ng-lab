@@ -4,7 +4,7 @@ An interactive reference for modern Angular. Every page is a small, runnable exa
 signals, patterns and performance techniques I reach for most often — with the code sitting right
 next to the demo, ready to copy.
 
-> Live demo: https://example.github.io/ng-lab/ _(update once Pages is enabled)_
+> Live demo: https://vitaliecondorache.github.io/ng-lab/ _(update if the repo name differs)_
 
 ## What is in here
 
